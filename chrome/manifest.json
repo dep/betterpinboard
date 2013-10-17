@@ -1,6 +1,6 @@
 {
 		"name": "Pinboard.in: Better Keyboard",
-		"version": "1.58",
+		"version": "1.6.0",
 		"manifest_version": 2,
 		"description": "Adds many popular, logical keyboard shortcuts to Pinboard.in ('?' will show them).",
 		"icons": { "64": "icon-128.png", "48": "icon-48.png", "32": "icon-32.png" },

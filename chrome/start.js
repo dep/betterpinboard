@@ -74,11 +74,12 @@ $(document).ready(function() {
         active_bookmark.find(".star span").trigger("click");
       /* # */
       } else if (code == "35" && event.shiftKey == true) {
-        active_bookmark.find(".confirm a").trigger("click");
-        active_bookmark.slideUp(function() {
-            prev_bookmark.addClass("selected_bookmark");
-            $(this).remove();
-        });
+        active_bookmark.addClass("to_del");
+        inject('$(".to_del + .bookmark_parent").addClass("to_sel")');
+        inject('delete_bmark($(".selected_bookmark .bookmark").attr("id"));');
+        inject('$(".selected_bookmark .confirm a").click();');
+        // clean-up
+        setTimeout("clean_up()", 500);
       /* x */
       } else if (code == "120") {
         active_bookmark.find(".mark_read").trigger("click");
@@ -191,25 +192,18 @@ $(document).ready(function() {
       /* e */
       } else if (code == "69") {
         if (active_bookmark.length > 0) {
-          var actualCode = ['edit($(".selected_bookmark .bookmark").attr("id"))'].join('\n');
-          var script = document.createElement('script');
-          script.textContent = actualCode;
-          (document.head||document.documentElement).appendChild(script);
-          script.parentNode.removeChild(script);
+          inject('edit($(".selected_bookmark .bookmark").attr("id"))');
           active_bookmark.addClass("editing");
           active_bookmark.find(".url").focus();
         } else if ($(".note_last_updated").length > 0) {
           // we must be on the notes page
           window.location.href = "http://notes.pinboard.in" + $(".note_last_updated a").attr("href");
         }
-      // t
+      /* t */
       } else if (code == "84") {
-        var actualCode = ['edit($(".selected_bookmark .bookmark").attr("id"))'].join('\n');
-        var script = document.createElement('script');
-        script.textContent = actualCode;
-        (document.head||document.documentElement).appendChild(script);
-        script.parentNode.removeChild(script);
+        inject('edit($(".selected_bookmark .bookmark").attr("id"))');
         active_bookmark.addClass("editing");
+        active_bookmark.find(".tags").val(active_bookmark.find(".tags").val() + " ");
         active_bookmark.find(".tags").focus();
       // Typeahead
       } else if (code == "220") {
@@ -292,4 +286,21 @@ function refresh_bookmarks() {
 
 function get_user_id() {
   return window.location.pathname.split("u:")[1].split("/")[0];
+}
+
+// Code injection
+function inject(code) {
+    var script = document.createElement('script');
+    script.textContent = code;
+    (document.head||document.documentElement).appendChild(script);
+    script.parentNode.removeChild(script);
+}
+
+function clean_up() {
+    $(".bookmark_parent").each(function() {
+        if($(this).find(".bookmark").length == 0) {
+            $(this).remove();
+        }
+    });
+    $(".to_sel").addClass("selected_bookmark").removeClass("to_sel");
 }
