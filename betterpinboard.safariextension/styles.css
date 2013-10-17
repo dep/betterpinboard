@@ -1,0 +1,87 @@
+.minified .url_display,
+.minified .when,
+.minified .description,
+.minified .source,
+.minified .bookmark br,
+.minified .edit_links {
+  display:none !important;
+}
+
+.prettify .editing .bookmark {
+  width:auto !important;
+}
+.prettify .editing {
+  position:fixed;
+  top:20%;
+  left:20%;
+  -webkit-box-shadow:1px 3px 6px #555;
+  z-index:999;
+  background:#ffffe7;
+}
+.prettify .private {
+  opacity:0.6;
+}
+.prettify .bookmark.private {
+  background-image:url(http://dpeck.net/images/private.gif) !important;
+  background-position:99% 3px !important;
+  background-repeat:no-repeat !important;
+}
+.prettify .bookmark.private .bookmark_title {
+  color:#666 !important;
+}
+.prettify .bookmark.private .display {
+  margin-right:20px !important;
+}
+.prettify .bookmark .unread {
+  background-image:url(http://dpeck.net/images/unread.png);
+  background-position:0 0;
+  background-repeat:no-repeat;
+  padding-left:20px !important;
+  display:inline;
+  font-weight:bold;
+}
+
+.selected_bookmark .bookmark {
+  background-color:#FDFFE5 !important;
+  border-right:3px solid #ddd !important;
+  opacity:1 !important;
+}
+#advanced_shortcuts {
+  margin-top:10px;
+}
+#overlay_shortcuts {
+  position:fixed !important;
+  left:10% !important;
+  height:auto !important;
+  width:600px !important;
+  overflow:hidden;
+  text-align:left !important;
+}
+#overlay_shortcuts table {
+  margin-right:20px;
+}
+#overlay_shortcuts table,
+#advanced_shortcuts {
+  float:left;
+}
+
+.copy_bookmark input {
+  width:350px;
+  border:1px solid #ccc;
+}
+.special_modal {
+  border:1px solid #ccc;
+  box-shadow:1px 2px 3px #aaa;
+  position:fixed;
+  top:20%;
+  left:10%;
+  background:#fff;
+  padding:10px;
+  width:650px !important;
+}
+.special_modal input {
+  font-size:28px;
+  color:#888;
+  padding:5px;
+  border:1px solid #bbb;
+}

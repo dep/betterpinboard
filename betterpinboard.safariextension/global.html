@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script>
+    safari.application.addEventListener("message",respondToMessage,false);
+
+    function respondToMessage(msg) {
+      if (msg.name == "pin_url") {
+        safari.application.activeBrowserWindow.openTab().url = msg.message;
+      } else if (msg.name == "init") {
+        if (msg.message == "rename") {
+          if(safari.extension.settings["toread_todo"]) {
+            msg.target.page.dispatchMessage("rename_answer", "rename");
+          }
+        }
+        if (msg.message == "keyboard") {
+          if(safari.extension.settings["keyboard_shortcuts"]) {
+            msg.target.page.dispatchMessage("keyboard_answer", "keyboard");
+          }
+        }
+        if (msg.message == "pretty") {
+          if(safari.extension.settings["pretty"]) {
+            msg.target.page.dispatchMessage("pretty_answer", "pretty");
+          }
+        }
+      }
+    }
+  </script>
+</head>
+</html>

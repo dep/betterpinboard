@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Author</key>
+	<string>dep</string>
+	<key>Builder Version</key>
+	<string>7536.19</string>
+	<key>CFBundleDisplayName</key>
+	<string>Better Pinboard</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.pecknologyinc.betterpinboard</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.7</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>Chrome</key>
+	<dict>
+		<key>Global Page</key>
+		<string>global.html</string>
+		<key>Popovers</key>
+		<array>
+			<dict>
+				<key>Filename</key>
+				<string>pinboard_mini.html</string>
+				<key>Height</key>
+				<real>600</real>
+				<key>Identifier</key>
+				<string>pinboard_mini</string>
+				<key>Width</key>
+				<real>600</real>
+			</dict>
+		</array>
+		<key>Toolbar Items</key>
+		<array>
+			<dict>
+				<key>Identifier</key>
+				<string>pinboard_mini_toolbar</string>
+				<key>Image</key>
+				<string>icon-toolbar.png</string>
+				<key>Label</key>
+				<string>Pinboard</string>
+				<key>Palette Label</key>
+				<string>Pinboard</string>
+				<key>Popover</key>
+				<string>pinboard_mini</string>
+				<key>Tool Tip</key>
+				<string>Open Pinboard Mini</string>
+			</dict>
+		</array>
+	</dict>
+	<key>Content</key>
+	<dict>
+		<key>Scripts</key>
+		<dict>
+			<key>End</key>
+			<array>
+				<string>keyboard.js</string>
+				<string>rename.js</string>
+				<string>init.js</string>
+			</array>
+			<key>Start</key>
+			<array>
+				<string>jquery.js</string>
+			</array>
+		</dict>
+		<key>Stylesheets</key>
+		<array>
+			<string>styles.css</string>
+		</array>
+	</dict>
+	<key>Description</key>
+	<string>Adds new functionality and more keyboard shortcuts to bookmarking website Pinboard.in.</string>
+	<key>ExtensionInfoDictionaryVersion</key>
+	<string>1.0</string>
+	<key>Permissions</key>
+	<dict>
+		<key>Website Access</key>
+		<dict>
+			<key>Include Secure Pages</key>
+			<true/>
+			<key>Level</key>
+			<string>All</string>
+		</dict>
+	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://dl.dropbox.com/u/36612/Slingshot/Documents/betterpinboardupdates.plist</string>
+	<key>Website</key>
+	<string>http://dpeck.net/pinboard/</string>
+</dict>
+</plist>

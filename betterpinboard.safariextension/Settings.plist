@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>DefaultValue</key>
+		<string>keyboard</string>
+		<key>Key</key>
+		<string>keyboard_shortcuts</string>
+		<key>Title</key>
+		<string>Enable Keyboard Shortcuts</string>
+		<key>TrueValue</key>
+		<string>keyboard</string>
+		<key>Type</key>
+		<string>CheckBox</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>rename</string>
+		<key>Key</key>
+		<string>toread_todo</string>
+		<key>Title</key>
+		<string>Change "to read" to "to do"</string>
+		<key>TrueValue</key>
+		<string>rename</string>
+		<key>Type</key>
+		<string>CheckBox</string>
+	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>pretty</string>
+		<key>Key</key>
+		<string>pretty</string>
+		<key>Title</key>
+		<string>Show Enhanced Styles</string>
+		<key>TrueValue</key>
+		<string>pretty</string>
+		<key>Type</key>
+		<string>CheckBox</string>
+	</dict>
+</array>
+</plist>
