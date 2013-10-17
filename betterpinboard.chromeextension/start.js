@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   $("body").on("keyup", "input, textarea", function(event) {
       if(event.keyCode==27) {
-          $(".selected_bookmark #edit_bookmark_form").remove();
+          $(".selected_bookmark").find("input[type='reset']").click();
       }
   });
 
@@ -16,7 +16,15 @@ $(document).ready(function() {
   };
   (document.head||document.documentElement).appendChild(s);
   active_class = "selected_bookmark"
-  $(".bookmark").parent().addClass("bookmark_parent");
+
+  $(".bookmark").each(function() {
+    if ($(this).parent().attr("id") == "main_column") {
+        $(this).wrap("<div class='bookmark_parent'></div>");
+    } else {
+        $(".bookmark").parent().addClass("bookmark_parent");
+    }
+  });
+
   refresh_bookmarks();
   first_bookmark.addClass(active_class);
 
@@ -82,7 +90,7 @@ $(document).ready(function() {
         setTimeout("clean_up()", 500);
       /* x */
       } else if (code == "120") {
-        active_bookmark.find(".mark_read").trigger("click");
+        inject('mark_as_read($(".selected_bookmark .bookmark").attr("id"));');
       /* add note */
       } else if (code == "78" && event.shiftKey == true) {
         if ($("#top_menu").length > 0) {
