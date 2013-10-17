@@ -1,0 +1,53 @@
+.minified .url_display,
+.minified .when,
+.minified .description,
+.minified .source,
+.minified .bookmark br,
+.minified .edit_links {
+  display:none !important;
+}
+
+.selected_bookmark .bookmark {
+  background-color:#FDFFE5 !important;
+  border-right:3px solid #ddd !important;
+  opacity:1 !important;
+}
+#advanced_shortcuts {
+  margin-top:10px;
+}
+#overlay_shortcuts {
+  position:fixed !important;
+  left:10% !important;
+  height:auto !important;
+  width:600px !important;
+  overflow:hidden;
+  text-align:left !important;
+}
+#overlay_shortcuts table {
+  margin-right:20px;
+}
+#overlay_shortcuts table,
+#advanced_shortcuts {
+  float:left;
+}
+
+.copy_bookmark input {
+  width:350px;
+  border:1px solid #ccc;
+}
+.special_modal {
+  border:1px solid #ccc;
+  box-shadow:1px 2px 3px #aaa;
+  position:fixed;
+  top:20%;
+  left:10%;
+  background:#fff;
+  padding:10px;
+}
+.special_modal input {
+  font-size:28px;
+  color:#888;
+  padding:5px;
+  border:1px solid #bbb;
+  width:600px !important;
+}
