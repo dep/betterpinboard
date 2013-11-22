@@ -6,6 +6,9 @@
 .minified .edit_links {
   display:none !important;
 }
+.bookmark_parent {
+    clear:both;
+}
 
 .selected_bookmark .bookmark {
   background-color:#FDFFE5 !important;

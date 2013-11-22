@@ -17,13 +17,8 @@ $(document).ready(function() {
   (document.head||document.documentElement).appendChild(s);
   active_class = "selected_bookmark"
 
-  $(".bookmark").each(function() {
-    if ($(this).parent().attr("id") == "main_column") {
-        $(this).wrap("<div class='bookmark_parent'></div>");
-    } else {
-        $(".bookmark").parent().addClass("bookmark_parent");
-    }
-  });
+
+  check_and_format_page_type();
 
   refresh_bookmarks();
   first_bookmark.addClass(active_class);
@@ -311,4 +306,20 @@ function clean_up() {
         }
     });
     $(".to_sel").addClass("selected_bookmark").removeClass("to_sel");
+}
+
+function check_and_format_page_type() {
+  if ($("#main_column").length) {
+    if ($("#bookmarks").length) {
+      $("#bookmarks > div").each(function() {
+        $(this).wrap("<div class='bookmark_parent'></div>");
+      });
+    } else {
+      $("#main_column > .bookmark").each(function() {
+        $(this).wrap("<div class='bookmark_parent'></div>");
+      });
+    }
+  } else {
+    $(".bookmark").parent().addClass("bookmark_parent");
+  }
 }
