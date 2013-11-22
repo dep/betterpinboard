@@ -122,18 +122,12 @@ $(document).ready(function() {
         window.location.href = "http://pinboard.in/";
       /* Go to starred items */
       } else if (code == "56") {
-        $(".user_navbar a").each(function() {
-          if ($(this).html() == "starred" && key_active) {
-            window.location.href = $(this).attr("href");
-          }
-        });
+        var user_id = get_user_id();
+        window.location.href = "http://pinboard.in/u:" + user_id + "/starred";
       /* Go to private items */
       } else if (code == "80") {
-        $(".user_navbar a").each(function() {
-          if ($(this).html() == "private" && key_active) {
-            window.location.href = $(this).attr("href");
-          }
-        });
+        var user_id = get_user_id();
+        window.location.href = "http://pinboard.in/u:" + user_id + "/private";
       /* Go to Notes */
       } else if (code == "87" && key_active) {
         var user_id = get_user_id();
@@ -288,7 +282,7 @@ function refresh_bookmarks() {
 }
 
 function get_user_id() {
-  return window.location.pathname.split("u:")[1].split("/")[0];
+  return $(".banner_username").html();
 }
 
 // Code injection
