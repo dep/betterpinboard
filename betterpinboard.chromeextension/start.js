@@ -21,6 +21,7 @@ $(document).ready(function() {
   check_and_format_page_type();
 
   refresh_bookmarks();
+  make_inline();
   first_bookmark.addClass(active_class);
 
   $(".bookmark_parent").click(function() {
@@ -316,4 +317,14 @@ function check_and_format_page_type() {
   } else {
     $(".bookmark").parent().addClass("bookmark_parent");
   }
+}
+
+function make_inline() {
+    $(".bookmark").each(function() {
+        var bookmark = $(this);
+        var url = bookmark.find(".bookmark_title").attr("href");
+        if (url.match("youtube.com")) {
+            bookmark.append('<iframe width="560" height="315" src="' + url + '"" frameborder="0" allowfullscreen></iframe>');
+        }
+    });
 }
